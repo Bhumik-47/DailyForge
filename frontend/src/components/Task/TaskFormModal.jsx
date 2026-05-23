@@ -8,6 +8,7 @@ const DESCRIPTION_MAX_LENGTH = 500;
 const DESCRIPTION_WARNING_LENGTH = 450;
 const TITLE_MAX_LENGTH = 30;
 const TITLE_WARNING_LENGTH = 25;
+const TAG_MAX_LENGTH = 15;
 
 export default function TaskFormModal({ task, onClose, onSubmit, errorMessage, onError }) {
   const [title, setTitle] = useState("");
@@ -192,6 +193,7 @@ export default function TaskFormModal({ task, onClose, onSubmit, errorMessage, o
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              maxLength={TAG_MAX_LENGTH}
               className="w-full mt-1 p-2 border border-soft rounded-lg
                          focus:ring-(--primary) focus:border-(--primary)
                          bg-transparent text-main"
